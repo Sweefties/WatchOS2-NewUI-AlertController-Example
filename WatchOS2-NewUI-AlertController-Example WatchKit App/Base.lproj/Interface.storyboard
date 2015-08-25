@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8089"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchOS2_NewUI_AlertController_Example_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="left" contentMode="center" layout="vertical" radius="0.0" id="e6a-uG-7S8">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="center" title="Button" id="idI-Wi-dh9">
+                                    <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="showAlert" destination="AgC-eL-Hgc" id="YBb-j9-BT6"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" verticalAlignment="center" title="Button" id="MAE-zo-kcq">
+                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="showSideBySideAlertBtn" destination="AgC-eL-Hgc" id="fi2-SC-Aka"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" verticalAlignment="center" title="Button" id="s9A-OO-rP0">
+                                    <color key="backgroundColor" red="0.8862745098" green="0.0" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="showActionSheetAlert" destination="AgC-eL-Hgc" id="kSZ-Rm-ev8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="DefaultAlert" destination="idI-Wi-dh9" id="gGT-OZ-HTh"/>
+                        <outlet property="SheetAlert" destination="s9A-OO-rP0" id="bIq-ST-YKm"/>
+                        <outlet property="SideBySideAlert" destination="MAE-zo-kcq" id="jtJ-JF-pxE"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="282" y="429"/>
         </scene>
     </scenes>
 </document>
