@@ -27,7 +27,7 @@ To run the example project, clone the repo.
 Configure your Storyboard :
 
   - Drag and drop Button to Interface Controller
-  - connect your WKInterfaceButton ‘DefaultAlert‘ to your Interface Controller class
+  - connect your WKInterfaceButton `DefaultAlert` to your Interface Controller class
   - connect IBAction
   - put function code to controller class.
   
