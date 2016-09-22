@@ -12,8 +12,8 @@ WatchOS 2 Experiments - New UI Components - Alert Controller Style
 
 ## Requirements
 
-- >= XCode 7 beta 5~.
-- >= Swift 2.
+- >= XCode 8.0.
+- >= Swift 3.
 
 Tested on WatchOS2 Simulator.
 
