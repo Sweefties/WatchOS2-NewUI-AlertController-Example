@@ -18,8 +18,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var SheetAlert: WKInterfaceButton!
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         // Configure interface objects here.
         DefaultAlert.setTitle("Default")
@@ -40,15 +40,15 @@ class InterfaceController: WKInterfaceController {
 
     // MARK: - IB Actions
     @IBAction func showAlert() {
-        self.showAlertWithStyle(WKAlertControllerStyle.Alert)
+        self.showAlertWithStyle(WKAlertControllerStyle.alert)
     }
     
     @IBAction func showSideBySideAlertBtn() {
-        self.showAlertWithStyle(WKAlertControllerStyle.SideBySideButtonsAlert)
+        self.showAlertWithStyle(WKAlertControllerStyle.sideBySideButtonsAlert)
     }
     
     @IBAction func showActionSheetAlert() {
-        self.showAlertWithStyle(WKAlertControllerStyle.ActionSheet)
+        self.showAlertWithStyle(WKAlertControllerStyle.actionSheet)
     }
     
 }
@@ -57,28 +57,28 @@ class InterfaceController: WKInterfaceController {
 extension InterfaceController {
     
     // prepare Alert with setted style
-    func showAlertWithStyle(style: WKAlertControllerStyle) {
+    func showAlertWithStyle(_ style: WKAlertControllerStyle) {
         // init the Alert Actions
-        let cancel = WKAlertAction(title: "Cancel", style: WKAlertActionStyle.Cancel, handler: { () -> Void in
+        let cancel = WKAlertAction(title: "Cancel", style: WKAlertActionStyle.cancel, handler: { () -> Void in
             print("cancel")
         })
         
-        let action = WKAlertAction(title: "Action", style: WKAlertActionStyle.Default, handler: { () -> Void in
+        let action = WKAlertAction(title: "Action", style: WKAlertActionStyle.default, handler: { () -> Void in
             print("default action method..")
         })
         
-        let destructive = WKAlertAction(title: "Destructive", style: WKAlertActionStyle.Destructive, handler: { () -> Void in
+        let destructive = WKAlertAction(title: "Destructive", style: WKAlertActionStyle.destructive, handler: { () -> Void in
             print("destructive")
         })
         // populate an array of actions
         var actions = NSArray()
-        if style == WKAlertControllerStyle.SideBySideButtonsAlert {
+        if style == WKAlertControllerStyle.sideBySideButtonsAlert {
             actions = [action, cancel]
         }else{
             actions = [action, cancel, destructive]
         }
         // presented Alert Controller
-        self.presentAlertControllerWithTitle("watchOS 2", message: "Alert Controller", preferredStyle: style, actions: actions as! [WKAlertAction])
+        self.presentAlert(withTitle: "watchOS 2", message: "Alert Controller", preferredStyle: style, actions: actions as! [WKAlertAction])
     }
     
 }
